@@ -417,6 +417,41 @@ $resultado=$clase->ConsultaPerson($_GET['cedula']);
                   ini_set('date.timezone','America/Bogota');
                   $fecha = date("Y-m-d H:i:s");
                     //////////////////////// PRESIONAR EL BOTÓN //////////////////////////
+                    if(isset($_POST['insertar2']))
+                    {
+                    $items1 = ($_POST['her']);
+                    $items2 = ($_POST['can']);
+                     
+                    ///////////// SEPARAR VALORES DE ARRAYS, EN ESTE CASO SON 4 ARRAYS UNO POR CADA INPUT (ID, NOMBRE, CARRERA Y GRUPO////////////////////)
+                    while(true) {
+
+                        //// RECUPERAR LOS VALORES DE LOS ARREGLOS ////////
+                        $item1 = current($items1);
+                        $item2 = current($items2);
+                        
+                        ////// ASIGNARLOS A VARIABLES ///////////////////
+                        $tipo_her=(( $item1 !== false) ? $item1 : ", &nbsp;");
+                        $can_her=(( $item2 !== false) ? $item2 : ", &nbsp;");
+
+                        //// CONCATENAR LOS VALORES EN ORDEN PARA SU FUTURA INSERCIÓN ////////
+                        $valores='('.$cedu.',"'.$fecha.'","'.$tipo_her.'","'.$can_her.'","'.$_SESSION["id"].'"),';
+
+                        //////// YA QUE TERMINA CON COMA CADA FILA, SE RESTA CON LA FUNCIÓN SUBSTR EN LA ULTIMA FILA /////////////////////
+                        $valoresQ= substr($valores, 0, -1);
+                        
+                        ///////// QUERY DE INSERCIÓN ///////////////////////////
+                        $resultado=$clase->OutTools($valoresQ);
+
+                        // Up! Next Value
+                        $item1 = next( $items1 );
+                        $item2 = next( $items2 );
+                        
+                        // Check terminator
+                        if($item1 === false && $item2 === false) break;
+                
+                    }
+                
+                    }
                     if(isset($_POST['insertar1']))
                     {
                     $items1 = ($_POST['her']);
@@ -451,40 +486,6 @@ $resultado=$clase->ConsultaPerson($_GET['cedula']);
                 
                     }
                 
-                    }
-                    if(isset($_POST['insertar2']))
-                    {
-                      $items1 = ($_POST['her']);
-                       $items2 = ($_POST['can']);
-                     
-                    ///////////// SEPARAR VALORES DE ARRAYS, EN ESTE CASO SON 4 ARRAYS UNO POR CADA INPUT (ID, NOMBRE, CARRERA Y GRUPO////////////////////)
-                    while(true) {
-
-                        //// RECUPERAR LOS VALORES DE LOS ARREGLOS ////////
-                        $item1 = current($items1);
-                        $item2 = current($items2);
-                        
-                        ////// ASIGNARLOS A VARIABLES ///////////////////
-                        $tipo_her=(( $item1 !== false) ? $item1 : ", &nbsp;");
-                        $can_her=(( $item2 !== false) ? $item2 : ", &nbsp;");
-
-                        //// CONCATENAR LOS VALORES EN ORDEN PARA SU FUTURA INSERCIÓN ////////
-                        $valores='('.$cedu.',"'.$fecha.'","'.$tipo_her.'","'.$can_her.'"),"'.$_SESSION["id"].'"),';
-
-                        //////// YA QUE TERMINA CON COMA CADA FILA, SE RESTA CON LA FUNCIÓN SUBSTR EN LA ULTIMA FILA /////////////////////
-                        $valoresQ= substr($valores, 0, -1);
-                        
-                        ///////// QUERY DE INSERCIÓN ////////////////////////////
-                        $resultado=$clase->OutTools($valoresQ);
-                        
-                        // Up! Next Value
-                        $item1 = next( $items1 );
-                        $item2 = next( $items2 );
-                        
-                        // Check terminator
-                        if($item1 === false && $item2 === false) break;
-                
-                    }
                     }
                   ?>
             </div>

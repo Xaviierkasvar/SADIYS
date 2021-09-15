@@ -261,7 +261,7 @@ class Person
     	$this->Conexion=Conectarse();
 		$sql = "insert into herramientas (ced_enc, fec_salida, tipo_her, can_her,id_registrador) 
                       values $valoresQ";
-		$resultado=$this->Conexion->query($sql) or mysql_error();
+		$resultado=$this->Conexion->query($sql)or mysql_error();
 		$this->Conexion->close();
 		return $resultado;
     }

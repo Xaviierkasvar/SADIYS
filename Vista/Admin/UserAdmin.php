@@ -54,7 +54,7 @@ $clase = new Admin;
                 <li><a href="Add.php"><img src="../img/17.png" align="bottom" width="100" height="100"class="img-fluid"class="img-fluid"><p class="text-dark">Usuarios</p></a></li>
                 </a><li><a href="Consulta.php"><img src="../img/5.png" align="bottom" width="123" height="100"class="img-fluid"><p class="text-dark">Registros</p></li>
                 <li><a href="Consultas.php"><img src="../img/6.svg" align="bottom" width="100" height="100"class="img-fluid"><p class="text-dark">Consultas</p></a></li>
-                <li><a href="http://localhost/phpmyadmin/db_structure.php?server=1&db=sadiys_celsia_zf"><img src="../img/7.png" align="bottom" width="100" height="100"class="img-fluid"><p class="text-dark">Gestionar BD</p></a></li>
+                <li><a href="http://localhost/phpmyadmin/index.php?route=/database/structure&server=1&db=sadiys_db"><img src="../img/7.png" align="bottom" width="100" height="100"class="img-fluid"><p class="text-dark">Gestionar BD</p></a></li>
                 <li><a href="Estadisticas.php"><img src="../img/8.png" align="bottom" width="100" height="100"class="img-fluid"><p class="text-dark">Estadisticas</p></a></li>
             </ul>
           </div>
