@@ -1,12 +1,12 @@
 administrador
-usuario: 1143135491
+usuario: 123456
 clave: 1
 
 
 
 operador
-usuario: 1042850991
-clave: xys
+usuario: 123
+clave: 123456
 
 
 para consultas
