@@ -41,7 +41,7 @@ $clase = new Oper;
         <header class="col-12">
            <div class="float-left">
             <img  src="../img/15.png" width="50" height="50">
-            <p class="text-dark tuser b-0">Usuario Operador:<br><?php echo $_SESSION["nom"];?><?php echo $_SESSION["ape"];?></p>
+            <p class="text-dark tuser b-0">Usuario Operador:<br><?php echo $_SESSION["nom"];?>&nbsp;<?php echo $_SESSION["ape"];?></p>
           </div>
           <div>
             <a class=" float-right" href="../salir.php"><img src="../img/salir.svg" width="60" height="60" align="bottom"class="img-fluid"></a>
